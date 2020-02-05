@@ -53,6 +53,7 @@ namespace SharpNeatGUI
         double _champGenomeFitness;
         /// <summary>Array of 'nice' colors for chart plots.</summary>
         Color[] _plotColorArr;
+        string DataFile;
 
         #endregion
 
@@ -267,7 +268,7 @@ namespace SharpNeatGUI
             {
                 string filename = txtFileLogBaseName.Text + '_' + DateTime.Now.ToString("yyyyMMdd") + ".log";
                 _logFileWriter = new StreamWriter(filename, true);
-                _logFileWriter.WriteLine("ClockTime,Gen,BestFitness,MeanFitness,MeanSpecieChampFitness,ChampComplexity,MeanComplexity,MaxComplexity,TotalEvaluationCount,EvaluationsPerSec,SearchMode");
+                _logFileWriter.WriteLine("ClockTime,Gen,BestFitness,MeanFitness,MeanSpecieChampFitness,ChampComplexity,MeanComplexity,MaxComplexity,TotalEvaluationCount,EvaluationsPerSec,SearchMode,MaxFitness");
             }
 
             // Start the algorithm & update GUI state.
@@ -730,7 +731,7 @@ namespace SharpNeatGUI
 
         private void saveBestGenomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string filePath = SelectFileToSave("Save champion genome", "gnm.xml", "(*.gnm.xml)|*.gnm.xml");
+            string filePath = SelectFileToSave("Save champion genome", "gnm.xml", "(*.gnm.xml)|*.gnm.xml",txtFileBaseName.Text);
             if(string.IsNullOrEmpty(filePath)) {
                 return;
             }
@@ -834,6 +835,13 @@ namespace SharpNeatGUI
                                                             {
                                                                 return new Point2DDouble(_ea.CurrentGeneration, _ea.Statistics._bestFitnessMA.Mean);
                                                             }));
+            if (cmbExperiments.SelectedItem.ToString() == "DC Motor Identification (NEAT)")
+            {
+                _dsList.Add(new TimeSeriesDataSource("Max fitness", TimeSeriesDataSource.DefaultHistoryLength, 0, Color.Blue, delegate ()
+                    {
+                        return new Point2DDouble(_ea.CurrentGeneration, SharpNeat.Domains.IDMotor.IDMotorUtils.GetMaxFitness);
+                    }));
+            }
 
             // Create a data sources for any auxiliary fitness info.
             AuxFitnessInfo[] auxFitnessArr = _ea.CurrentChampGenome.EvaluationInfo.AuxFitnessArr;
@@ -1503,18 +1511,36 @@ namespace SharpNeatGUI
             if(null != _logFileWriter)
             {
                 NeatAlgorithmStats stats = _ea.Statistics;
-                _logFileWriter.WriteLine(string.Format("{0:yyyy-MM-dd HH:mm:ss.fff},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}",
-                                                        DateTime.Now,
-                                                        stats._generation,
-                                                        stats._maxFitness,
-                                                        stats._meanFitness,
-                                                        stats._meanSpecieChampFitness,
-                                                        _ea.CurrentChampGenome.Complexity,
-                                                        stats._meanComplexity,
-                                                        stats._maxComplexity,
-                                                        stats._totalEvaluationCount,
-                                                        stats._evaluationsPerSec,
-                                                        _ea.ComplexityRegulationMode));
+                if (_selectedExperiment.ToString() != "DC Motor Identification (NEAT)") {
+                    _logFileWriter.WriteLine(string.Format("{0:yyyy-MM-dd HH:mm:ss.fff},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}",
+                                                            DateTime.Now,
+                                                            stats._generation,
+                                                            stats._maxFitness,
+                                                            stats._meanFitness,
+                                                            stats._meanSpecieChampFitness,
+                                                            _ea.CurrentChampGenome.Complexity,
+                                                            stats._meanComplexity,
+                                                            stats._maxComplexity,
+                                                            stats._totalEvaluationCount,
+                                                            stats._evaluationsPerSec,
+                                                            _ea.ComplexityRegulationMode));
+                }
+                else
+                {
+                    _logFileWriter.WriteLine(string.Format("{0:yyyy-MM-dd HH:mm:ss.fff},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}",
+                                                            DateTime.Now,
+                                                            stats._generation,
+                                                            stats._maxFitness,
+                                                            stats._meanFitness,
+                                                            stats._meanSpecieChampFitness,
+                                                            _ea.CurrentChampGenome.Complexity,
+                                                            stats._meanComplexity,
+                                                            stats._maxComplexity,
+                                                            stats._totalEvaluationCount,
+                                                            stats._evaluationsPerSec,
+                                                            _ea.ComplexityRegulationMode,
+                                                            SharpNeat.Domains.IDMotor.IDMotorUtils.GetMaxFitness));
+                }
                 _logFileWriter.Flush();
             }
         }
@@ -1609,6 +1635,28 @@ namespace SharpNeatGUI
             // No selection.
             return null;
 		}
+
+        /// <summary>
+		/// Ask the user for a filename / path sugesting one.
+		/// </summary>
+        private string SelectFileToSave(string dialogTitle, string fileExtension, string filter, string DefaultFileName)
+        {
+            SaveFileDialog oDialog = new SaveFileDialog();
+            oDialog.AddExtension = true;
+            oDialog.DefaultExt = fileExtension;
+            oDialog.Filter = filter;
+            oDialog.Title = dialogTitle;
+            oDialog.RestoreDirectory = true;
+            oDialog.FileName = DefaultFileName;
+
+            // Show dialog and block until user selects a file.
+            if (oDialog.ShowDialog() == DialogResult.OK)
+            {
+                return oDialog.FileName;
+            }
+            // No selection.
+            return null;
+        }
 
         private int? ParseInt(TextBox txtBox)
         {
@@ -1767,6 +1815,34 @@ namespace SharpNeatGUI
             return colorList.ToArray();
         }
 
+
         #endregion
+
+        private void loadTrainingDataSetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openTDataFileDialog.ShowDialog();
+        }
+
+        private void openTDataFileDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            
+            SharpNeat.Domains.IDMotor.IDMotorUtils.SetData(openTDataFileDialog.FileNames);
+            string[] FNArray = openTDataFileDialog.SafeFileNames;
+            string FNames="";
+
+            for (int i = 0; i < FNArray.GetLength(0); i++)
+                FNames += "__"+FNArray[i].Replace(".csv", "");
+            txtFileBaseName.Text = openTDataFileDialog.FileNames[0].Replace(FNArray[0], "") + "Genomas\\" + FNames + "_gnm";
+            txtFileLogBaseName.Text = openTDataFileDialog.FileNames[0].Replace(FNArray[0],"")+"Logs\\"+ FNames + "_log";
+        }
+
+        private void saveBestGenomePerformanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string File = txtFileBaseName.Text.Replace("Genomas\\","Performance\\").Replace("_gnm","_prf");
+            File=SelectFileToSave("Save champion Performance", ".csv", "(*.csv)|*.csv", File);
+            SharpNeat.Domains.IDMotor.IDMotorGraphView.SavePerformance(File);
+            
+            
+        }
     }
 }

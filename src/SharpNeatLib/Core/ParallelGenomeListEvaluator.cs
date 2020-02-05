@@ -129,16 +129,16 @@ namespace SharpNeat.Core
         /// </summary>
         private void Evaluate_NonCaching(IList<TGenome> genomeList)
         {
-            Parallel.ForEach(genomeList, _parallelOptions, delegate(TGenome genome)
+            Parallel.ForEach(genomeList, _parallelOptions, delegate (TGenome genome)
             {
                 TPhenome phenome = _genomeDecoder.Decode(genome);
-                if(null == phenome)
+                if (null == phenome)
                 {   // Non-viable genome.
                     genome.EvaluationInfo.SetFitness(0.0);
                     genome.EvaluationInfo.AuxFitnessArr = null;
                 }
                 else
-                {   
+                {
                     FitnessInfo fitnessInfo = _phenomeEvaluator.Evaluate(phenome);
                     genome.EvaluationInfo.SetFitness(fitnessInfo._fitness);
                     genome.EvaluationInfo.AuxFitnessArr = fitnessInfo._auxFitnessArr;

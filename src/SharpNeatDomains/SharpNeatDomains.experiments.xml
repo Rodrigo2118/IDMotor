@@ -215,6 +215,7 @@ Sin(x) evaluated over [0,2*PI]
       </Description>
     </Config>
   </Experiment>
+  
   <Experiment name="Generative Function Regression - Waveform #1) (NEAT)">
     <AssemblyPath>SharpNeatDomains.dll</AssemblyPath>
     <ClassName>SharpNeat.Domains.GenerativeFunctionRegression.GenerativeFnRegressionExperiment</ClassName>
@@ -239,7 +240,7 @@ Sin(x) evaluated over [0,2*PI]
     </Config>
   </Experiment>
 
-  <!-- Uncomment to compare NEAT with RBF-NEAT version of experiment.
+  <!-- Uncomment to compare NEAT with RBF-NEAT version of experiment. 
   <Experiment name="Function Regression - Sin(x^2) (NEAT)">
     <AssemblyPath>SharpNeatDomains.dll</AssemblyPath>
     <ClassName>SharpNeat.Domains.FunctionRegression.FnRegressionExperiment</ClassName>
@@ -261,7 +262,7 @@ Sin(x) evaluated over [0,2*PI]
       </Description>
     </Config>
   </Experiment>
-  -->
+  <!-->
   
   <Experiment name="Function Regression - Sin(x^2) (RBF-NEAT)">
     <AssemblyPath>SharpNeatDomains.dll</AssemblyPath>
@@ -584,5 +585,29 @@ A single evaluation consists of 75 test cases with the two boxes randomly positi
 The problem domain view allows the performance of the best genome to be observed. The view also allows the HyperNEAT genome to be decoded using a range of visual field pixel resolutions beyond the 11x11 resolution that genomes are trained with. The ability to do this is a feature of HyperNEAT - the evolved genomes are Compositional Pattern Producing Networks (CPPNs). A CPPN defines the connection strength between nodes positioned in some euclidean space and therefore we can use a CPPN to produce neural networks with more nodes by increasing the number and density of nodes.
       </Description>
     </Config>
-  </Experiment>  
+  </Experiment>
+  
+  <Experiment name="DC Motor Identification (NEAT)">
+    <AssemblyPath>SharpNeatDomains.dll</AssemblyPath>
+    <ClassName>SharpNeat.Domains.IDMotor.IDMotorExperiment</ClassName>
+    <Config>
+      <PopulationSize>1000</PopulationSize>
+      <SpecieCount>20</SpecieCount>
+      <Activation>
+        <Scheme>CyclicFixedIters</Scheme>
+        <Iters>1</Iters>
+      </Activation>
+      <ComplexityRegulationStrategy>Absolute</ComplexityRegulationStrategy>
+      <ComplexityThreshold>20</ComplexityThreshold>
+      <Description>
+        Identification of a Direct Current Motor.
+        The objecive is to mimic the behavior of a DC Motor given a voltage signal bewteen it's terminals.
+        The signal, time and expected position/speed is provided by a .csv file.
+        The input is the signal [V], the time [s] and the last position [rad] / speed [rad/s] and the output is the position [rad] / speed [rad/s]
+
+      </Description>
+
+    </Config>
+  </Experiment>
+
 </Experiments>

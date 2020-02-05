@@ -26,6 +26,7 @@ namespace SharpNeat.Network
             { "BipolarGaussian", BipolarGaussian.__DefaultInstance },
             { "Linear", Linear.__DefaultInstance },
             { "Sine", Sine.__DefaultInstance },
+            { "PureLinear",PureLinear.__DefaultInstance },
 
             // Unipolar.
             { "ArcSinH", ArcSinH.__DefaultInstance },

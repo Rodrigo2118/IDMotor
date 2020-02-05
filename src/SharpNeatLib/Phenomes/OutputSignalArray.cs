@@ -28,10 +28,10 @@ namespace SharpNeat.Phenomes
         { 
             get
             {
-                // Apply bounds of [0,1].
+                // Apply bounds of [-1,1].
                 double y = base[index]; 
-                if(y < 0.0) y = 0.0;
-                else if(y > 1.0) y = 1.0;
+                //if(y < -1.0) y = -1.0;
+                //else if(y > 1.0) y = 1.0;
                 return y;
             }
         }

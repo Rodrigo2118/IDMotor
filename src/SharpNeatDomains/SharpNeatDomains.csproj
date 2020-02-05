@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SharpNeat.Domains</RootNamespace>
     <AssemblyName>SharpNeatDomains</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
@@ -45,6 +45,7 @@
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Redzen, Version=9.0.0.0, Culture=neutral, PublicKeyToken=182843a4be0a74f7, processorArchitecture=MSIL">
       <HintPath>..\packages\Redzen.9.0.0\lib\netstandard2.0\Redzen.dll</HintPath>
     </Reference>
@@ -99,6 +100,13 @@
     <Compile Include="FunctionRegression\RbfFnRegressionExperiment.cs" />
     <Compile Include="GenerativeFunctionRegression\GenerativeFnRegressionExperiment.cs" />
     <Compile Include="GenerativeFunctionRegression\GenerativeFnRegressionEvaluator.cs" />
+    <Compile Include="IDMotor\IDMotorGraphView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDMotor\IDMotorGraphView.Designer.cs">
+      <DependentUpon>IDMotorGraphView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDMotor\IDMotorUtils.cs" />
     <Compile Include="IGuiNeatExperiment.cs" />
     <Compile Include="IntPoint.cs" />
     <Compile Include="BoxesVisualDiscrimination\BoxesVisualDiscriminationView.cs">
@@ -156,6 +164,8 @@
     <Compile Include="SinglePoleBalancing\SinglePoleStateData.cs" />
     <Compile Include="SinglePoleBalancing\SinglePoleBalancingExperiment.cs" />
     <Compile Include="XmlUtils.cs" />
+    <Compile Include="IDMotor\IDMotorBlackBoxEvaluator.cs" />
+    <Compile Include="IDMotor\IDMotorExperiment.cs" />
     <Compile Include="Xor\XorBlackBoxEvaluator.cs" />
     <Compile Include="Xor\XorExperiment.cs" />
   </ItemGroup>
@@ -178,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FunctionRegression\FnRegressionView2D.resx">
       <DependentUpon>FnRegressionView2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDMotor\IDMotorGraphView.resx">
+      <DependentUpon>IDMotorGraphView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NeatGenomeView.resx">
       <DependentUpon>NeatGenomeView.cs</DependentUpon>
