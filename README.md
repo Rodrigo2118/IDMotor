@@ -1,4 +1,4 @@
-### Importante: Este codigo esta basado en el trabajo de los desarrolladores mencionado abajo. 
+### Importante: Este codigo esta basado en el trabajo de los desarrolladores mencionado abajo. Las aportaciones que realice se encuentran en los ultimos commits. Muchos estan en master por que no sabia ocupar git.
 ---
 ### **Notice:** SharpNEAT is currently undergoing a major refactor at [sharpneat-refactor](https://github.com/colgreen/sharpneat-refactor)
 
