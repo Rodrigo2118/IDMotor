@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <ActivationFunctions>
+    <Fn id="0" name="PureLinear" prob="1" />
+  </ActivationFunctions>
+  <Networks>
+    <Network id="71217" birthGen="84" fitness="51579366.2922662">
+      <Nodes>
+        <Node type="bias" id="0" />
+        <Node type="in" id="1" />
+        <Node type="in" id="2" />
+        <Node type="in" id="3" />
+        <Node type="out" id="4" />
+        <Node type="hid" id="13" />
+        <Node type="hid" id="18" />
+        <Node type="hid" id="36" />
+        <Node type="hid" id="64" />
+        <Node type="hid" id="70" />
+        <Node type="hid" id="80" />
+        <Node type="hid" id="434" />
+      </Nodes>
+      <Connections>
+        <Con id="10" src="4" tgt="4" wght="0.061691218759810887" />
+        <Con id="11" src="0" tgt="4" wght="4.6791704322679548" />
+        <Con id="14" src="0" tgt="13" wght="5" />
+        <Con id="20" src="18" tgt="4" wght="1.9589810544384425" />
+        <Con id="38" src="36" tgt="4" wght="4.9561174986511682" />
+        <Con id="71" src="13" tgt="70" wght="4.9827281559294034" />
+        <Con id="72" src="70" tgt="36" wght="4.977778121471224" />
+        <Con id="76" src="18" tgt="64" wght="2.763062403997222" />
+        <Con id="81" src="64" tgt="80" wght="0.41149570576660166" />
+        <Con id="82" src="80" tgt="4" wght="4.988948883127021" />
+        <Con id="90" src="2" tgt="18" wght="-0.056392627681797931" />
+        <Con id="117" src="4" tgt="70" wght="0.000785733338265172" />
+        <Con id="130" src="70" tgt="4" wght="0.80698309022204617" />
+        <Con id="220" src="64" tgt="4" wght="0.80514384398257977" />
+        <Con id="435" src="0" tgt="434" wght="0.031232360004551204" />
+        <Con id="436" src="434" tgt="36" wght="5" />
+      </Connections>
+    </Network>
+  </Networks>
+</Root>
