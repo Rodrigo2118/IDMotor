@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <ActivationFunctions>
+    <Fn id="0" name="PureLinear" prob="1" />
+  </ActivationFunctions>
+  <Networks>
+    <Network id="379160" birthGen="457" fitness="8307780.9740285529">
+      <Nodes>
+        <Node type="bias" id="0" />
+        <Node type="in" id="1" />
+        <Node type="in" id="2" />
+        <Node type="in" id="3" />
+        <Node type="out" id="4" />
+        <Node type="hid" id="32" />
+        <Node type="hid" id="65" />
+        <Node type="hid" id="94" />
+        <Node type="hid" id="202" />
+        <Node type="hid" id="226" />
+        <Node type="hid" id="528" />
+        <Node type="hid" id="794" />
+        <Node type="hid" id="1086" />
+      </Nodes>
+      <Connections>
+        <Con id="8" src="3" tgt="4" wght="1.0000448360001832" />
+        <Con id="19" src="2" tgt="4" wght="0.031784118433723883" />
+        <Con id="33" src="1" tgt="32" wght="-0.47846195129867841" />
+        <Con id="93" src="32" tgt="32" wght="0.36424246095769319" />
+        <Con id="95" src="32" tgt="94" wght="4.8631658789038967" />
+        <Con id="96" src="94" tgt="4" wght="5" />
+        <Con id="217" src="3" tgt="202" wght="0.044283040949389361" />
+        <Con id="227" src="65" tgt="226" wght="0.2914937554631965" />
+        <Con id="271" src="2" tgt="202" wght="-0.02391971992552543" />
+        <Con id="495" src="1" tgt="202" wght="-0.014823760532918196" />
+        <Con id="545" src="226" tgt="65" wght="-0.0073688489782396706" />
+        <Con id="795" src="94" tgt="794" wght="-2.6091918190660062" />
+        <Con id="796" src="794" tgt="202" wght="5" />
+        <Con id="1007" src="32" tgt="226" wght="-0.045892201779432942" />
+        <Con id="1087" src="528" tgt="1086" wght="5" />
+        <Con id="1088" src="1086" tgt="4" wght="4.958975022787441" />
+        <Con id="1112" src="3" tgt="226" wght="-4.4873337596303662" />
+        <Con id="1126" src="1086" tgt="1086" wght="-2.5890040955256954" />
+      </Connections>
+    </Network>
+  </Networks>
+</Root>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <PopulationSize>1000</PopulationSize>
+  <SpecieCount>20</SpecieCount>
+  <Activation>
+    <Scheme>CyclicFixedIters</Scheme>
+    <Iters>1</Iters>
+  </Activation>
+  <ComplexityRegulationStrategy>Absolute</ComplexityRegulationStrategy>
+  <ComplexityThreshold>20</ComplexityThreshold>
+  <Description>
+    Identification of a Direct Current Motor.
+    The objecive is to mimic the behaviour of a DC Motor given a voltage signal bewteen it's terminals.
+    The signal, time and expected position/speed is provided by a .csv file.
+    The input is the signal [V], the time [s] and the last position [rad] / speed [rad/s] and the output is the position [rad] / speed [rad/s]
+
+  </Description>
+
+</Config>

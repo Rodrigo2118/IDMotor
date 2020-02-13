@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <ActivationFunctions>
+    <Fn id="0" name="PureLinear" prob="1" />
+  </ActivationFunctions>
+  <Networks>
+    <Network id="99915" birthGen="120" fitness="25846317.222251371">
+      <Nodes>
+        <Node type="bias" id="0" />
+        <Node type="in" id="1" />
+        <Node type="in" id="2" />
+        <Node type="in" id="3" />
+        <Node type="out" id="4" />
+        <Node type="hid" id="26" />
+      </Nodes>
+      <Connections>
+        <Con id="8" src="3" tgt="4" wght="1.0000082674613282" />
+        <Con id="9" src="2" tgt="4" wght="0.03211302312908796" />
+        <Con id="12" src="0" tgt="4" wght="-0.025970155385137434" />
+        <Con id="27" src="1" tgt="26" wght="3.3936232164167004" />
+        <Con id="28" src="26" tgt="4" wght="4.9942795529104052" />
+      </Connections>
+    </Network>
+  </Networks>
+</Root>

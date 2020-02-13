@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <ActivationFunctions>
+    <Fn id="0" name="PureLinear" prob="1" />
+  </ActivationFunctions>
+  <Networks>
+    <Network id="2900333" birthGen="3535" fitness="2092711.4803555142">
+      <Nodes>
+        <Node type="bias" id="0" />
+        <Node type="in" id="1" />
+        <Node type="in" id="2" />
+        <Node type="in" id="3" />
+        <Node type="out" id="4" />
+        <Node type="hid" id="26" />
+        <Node type="hid" id="81" />
+        <Node type="hid" id="213" />
+        <Node type="hid" id="474" />
+        <Node type="hid" id="1430" />
+        <Node type="hid" id="1518" />
+        <Node type="hid" id="1647" />
+        <Node type="hid" id="1769" />
+        <Node type="hid" id="2155" />
+        <Node type="hid" id="2267" />
+        <Node type="hid" id="3996" />
+        <Node type="hid" id="4070" />
+        <Node type="hid" id="4774" />
+        <Node type="hid" id="4972" />
+        <Node type="hid" id="5048" />
+        <Node type="hid" id="5197" />
+        <Node type="hid" id="6005" />
+      </Nodes>
+      <Connections>
+        <Con id="10" src="0" tgt="4" wght="-0.05693249225466411" />
+        <Con id="67" src="26" tgt="26" wght="0.9138401547046402" />
+        <Con id="82" src="0" tgt="81" wght="-3.6140013907008051" />
+        <Con id="83" src="81" tgt="26" wght="4.7550910387797884" />
+        <Con id="214" src="2" tgt="213" wght="0.23586412658715136" />
+        <Con id="1648" src="474" tgt="1647" wght="-0.056607262324137667" />
+        <Con id="1649" src="1647" tgt="1518" wght="4.773061057345414" />
+        <Con id="1770" src="2" tgt="1769" wght="-0.012979789698916248" />
+        <Con id="1981" src="26" tgt="4" wght="3.7811713506015603" />
+        <Con id="2156" src="1769" tgt="2155" wght="4.5521292943648044" />
+        <Con id="2157" src="2155" tgt="1430" wght="4.99976908260286" />
+        <Con id="2182" src="1769" tgt="4" wght="-0.29435691833624317" />
+        <Con id="2260" src="1769" tgt="1769" wght="1.0000887513578742" />
+        <Con id="2268" src="26" tgt="2267" wght="-3.4130819389949325" />
+        <Con id="3046" src="1518" tgt="26" wght="0.039757451155434186" />
+        <Con id="3276" src="1430" tgt="26" wght="-0.025861455434812761" />
+        <Con id="3473" src="213" tgt="474" wght="-0.076746269378792767" />
+        <Con id="4058" src="3996" tgt="213" wght="0.8226494857035" />
+        <Con id="4071" src="213" tgt="4070" wght="0.35628617389001194" />
+        <Con id="4072" src="4070" tgt="3996" wght="4.9890170995963556" />
+        <Con id="4147" src="1518" tgt="3996" wght="1.2899480938231367" />
+        <Con id="4775" src="213" tgt="4774" wght="-0.96256061296056394" />
+        <Con id="4776" src="4774" tgt="474" wght="-2.4264218118176641" />
+        <Con id="4968" src="2" tgt="4774" wght="-0.31728330190172921" />
+        <Con id="4971" src="0" tgt="4774" wght="-1.9504982894314402" />
+        <Con id="4974" src="4972" tgt="4" wght="-1.526569587237278" />
+        <Con id="4988" src="4774" tgt="26" wght="-0.01907608568859295" />
+        <Con id="4989" src="0" tgt="4972" wght="3.7444695664021865" />
+        <Con id="5049" src="0" tgt="5048" wght="4.6319339361800624" />
+        <Con id="5114" src="1" tgt="4070" wght="-4.8895226849188838" />
+        <Con id="5122" src="4972" tgt="4774" wght="-0.90591057798828178" />
+        <Con id="5191" src="1430" tgt="4774" wght="-0.05564941007061161" />
+        <Con id="5198" src="0" tgt="5197" wght="4.1612594851725584" />
+        <Con id="5199" src="5197" tgt="4972" wght="5" />
+        <Con id="5611" src="1647" tgt="5197" wght="0.02088475383491489" />
+        <Con id="6003" src="1769" tgt="5048" wght="-0.027218953321377536" />
+        <Con id="6006" src="5048" tgt="6005" wght="5" />
+        <Con id="6007" src="6005" tgt="474" wght="5" />
+        <Con id="6009" src="5048" tgt="1518" wght="-0.31620700087412718" />
+        <Con id="6281" src="1" tgt="5048" wght="3.9606872112182248" />
+      </Connections>
+    </Network>
+  </Networks>
+</Root>

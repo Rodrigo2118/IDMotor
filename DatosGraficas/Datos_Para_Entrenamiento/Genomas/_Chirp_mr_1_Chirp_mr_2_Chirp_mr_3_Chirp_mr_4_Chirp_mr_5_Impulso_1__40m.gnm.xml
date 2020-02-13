@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <ActivationFunctions>
+    <Fn id="0" name="PureLinear" prob="1" />
+  </ActivationFunctions>
+  <Networks>
+    <Network id="2295005" birthGen="2794" fitness="7389129.3190862937">
+      <Nodes>
+        <Node type="bias" id="0" />
+        <Node type="in" id="1" />
+        <Node type="in" id="2" />
+        <Node type="in" id="3" />
+        <Node type="out" id="4" />
+        <Node type="hid" id="42" />
+        <Node type="hid" id="73" />
+        <Node type="hid" id="106" />
+        <Node type="hid" id="504" />
+        <Node type="hid" id="1795" />
+        <Node type="hid" id="4808" />
+        <Node type="hid" id="5621" />
+        <Node type="hid" id="6710" />
+        <Node type="hid" id="6838" />
+      </Nodes>
+      <Connections>
+        <Con id="8" src="3" tgt="4" wght="0.99999841944748169" />
+        <Con id="21" src="0" tgt="4" wght="-0.23317098966664268" />
+        <Con id="43" src="1" tgt="42" wght="1.5428001654220378" />
+        <Con id="44" src="42" tgt="4" wght="4.6896972517267157" />
+        <Con id="310" src="42" tgt="73" wght="-4.942863424339607" />
+        <Con id="902" src="504" tgt="4" wght="0.54948738357827165" />
+        <Con id="1131" src="73" tgt="504" wght="-2.246483542688841" />
+        <Con id="1918" src="2" tgt="1795" wght="-3.7158222229164672" />
+        <Con id="2475" src="1795" tgt="73" wght="0.066419216946469545" />
+        <Con id="3288" src="0" tgt="504" wght="0.059869491796879205" />
+        <Con id="4075" src="1" tgt="106" wght="4.9988307914600876" />
+        <Con id="4118" src="106" tgt="106" wght="0.63318381147169878" />
+        <Con id="4298" src="106" tgt="504" wght="0.1359675239857443" />
+        <Con id="4921" src="73" tgt="4808" wght="0.076327216664379569" />
+        <Con id="5474" src="4808" tgt="106" wght="-0.11679021319424977" />
+        <Con id="5622" src="1" tgt="5621" wght="-4.7063267031170106" />
+        <Con id="5623" src="5621" tgt="4808" wght="5" />
+        <Con id="6712" src="6710" tgt="4808" wght="0.94620628638759763" />
+        <Con id="6839" src="504" tgt="6838" wght="-0.14321696438469825" />
+        <Con id="6840" src="6838" tgt="6710" wght="4.9706678179898436" />
+      </Connections>
+    </Network>
+  </Networks>
+</Root>
