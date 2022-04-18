@@ -1,4 +1,4 @@
-### Importante: Este codigo esta basado en el trabajo de los desarrolladores mencionado abajo. Las aportaciones que realice se encuentran en los ultimos commits. Muchos estan en master por que no sabia ocupar git.
+### Importante: Este codigo esta basado en el trabajo de los desarrolladores mencionado abajo. Las aportaciones que realice se encuentran en los ultimos commits. Muchos estan en master por que no sabia ocupar git. / This code is based in the work mentioned below. I was not familliar with the git flow so all my commits were done directly to the master branch.
 ---
 ### **Notice:** SharpNEAT is currently undergoing a major refactor at [sharpneat-refactor](https://github.com/colgreen/sharpneat-refactor)
 
